@@ -1,5 +1,3 @@
-let right = 0;
-let wrong = 0
 var sec = 0;
 var min = 0;
 var startTime = Date.now();
@@ -9,7 +7,7 @@ let secmin, milisecond1, quote, inputText, a;
 var running = false
 
 
-function matching() {
+function matching() { // this function match the total text input with the quote and timer invokes in this function
     inputText = document.getElementById('input')
     a = (inputText.value.length)
     console.log(a)
@@ -29,7 +27,7 @@ function matching() {
     }
 }
 
-function colourChange() {
+function colourChange() { // this function changes the colour when we enter =right and wrong letter and shake function is also called in this function.
     let ab = quote1.textContent.slice(0, a + 1);
     let ac = inputText.value
 
@@ -42,14 +40,14 @@ function colourChange() {
         setTimeout(removeShake, 2000)
     }
 }
-
+// this function count millisecond and show to the html page
 function milisecond() {
     var elapsedTime = Date.now() - startTime;
     let milisec = ((elapsedTime / 1000).toFixed(2).split(".")[1])
 
     document.getElementById("milisecond").innerHTML = milisec;
 };
-
+// this function count the minuts and seconds value and show to the html page
 function secMin() {
     sec++
     if (sec <= 9) {
@@ -73,6 +71,8 @@ function secMin() {
 
 }
 
+// this function helps to calculate the WPM result and generate alert in the browser
+
 function wordCount() {
     let array = (quote1.textContent.split('')).length
     console.log(array)
@@ -84,7 +84,7 @@ function wordCount() {
     console.log(WordPerMinut)
     alert('your word per minut is :' + WordPerMinut)
 }
-
+// this function reset the value of everything
 function reset() {
     let inputText = document.getElementById('input')
     inputText.value = null;
@@ -98,11 +98,9 @@ function reset() {
     running = false
     document.getElementById('input').style['border'] = "14px solid gray"
 }
-
+// this function remove the shake functionality
 function removeShake() {
     document.getElementById('input').classList.remove('shake')
 }
-
-
 document.getElementById("input").addEventListener('keypress', matching)
 document.getElementById("input").addEventListener('keyup', colourChange)

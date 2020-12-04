@@ -4,13 +4,20 @@ var sec = 0;
 var min = 0;
 var startTime = Date.now();
 var quote1 = document.querySelector('.quote')
-let secmin, milisecond1, quote, quoteArray;
+var quoteArray = quote1.textContent.split('')
+let secmin, milisecond1, quote, inputText, a;
+var running = false
+
 
 function matching() {
-    let inputText = document.getElementById('input')
-    if (inputText.value == 0) {
+    inputText = document.getElementById('input')
+    a = (inputText.value.length)
+    console.log(a)
+
+    if (inputText.value == 0 && !running) {
         milisecond1 = setInterval(milisecond, 10)
         secmin = setInterval(secMin, 1000)
+        running = true
 
     } else {
         if (quote1.textContent == inputText.value) {
@@ -19,6 +26,20 @@ function matching() {
             wordCount()
         }
 
+    }
+}
+
+function colourChange() {
+    let ab = quote1.textContent.slice(0, a + 1);
+    let ac = inputText.value
+
+    if (ab == ac) {
+        console.log('ho gya hai ab ky a')
+        document.getElementById('input').style['border'] = "20px solid #12d237";
+    } else {
+        document.getElementById('input').style['border'] = "20px solid #fd0000";
+        document.getElementById('input').classList.add('shake')
+        setTimeout(removeShake, 2000)
     }
 }
 
@@ -74,7 +95,14 @@ function reset() {
     min = 0;
     clearInterval(secmin)
     clearInterval(milisecond1)
+    running = false
+    document.getElementById('input').style['border'] = "14px solid gray"
+}
+
+function removeShake() {
+    document.getElementById('input').classList.remove('shake')
 }
 
 
 document.getElementById("input").addEventListener('keypress', matching)
+document.getElementById("input").addEventListener('keyup', colourChange)

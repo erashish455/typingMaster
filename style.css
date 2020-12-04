@@ -85,3 +85,9 @@ button {
     animation: shake 0.5s;
     animation-iteration-count: 1;
 }
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}

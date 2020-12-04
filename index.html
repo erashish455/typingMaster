@@ -13,28 +13,38 @@
 </head>
 
 <body class="text-center">
-    <h1>welcome to the typing speed calculator</h1>
-    <div class="container bg-warning ">
-        <div class="timer" id="timer"><span id="minut"></span>:<span id="second"></span>:<span id="milisecond"></span> </div>
-        <div class="quotediv">
-            <p class="quote">this is something you want to type. you can start typing from here</p>
-
-        </div>
-        <div class="inputdiv">
-            <textarea name="input" class="input" onkeypress="matching()" id="input" cols="30" rows="10"></textarea>
-
-        </div>
-        <button type="submit" onclick="reset()">Start Over</button>
-
+    <h1 class="py-5">welcome to the typing speed calculator</h1>
+    <div class="container-flex suggetion">
+        <h4 class="container">This is a typing test. Your goal is to duplicate the provided text, EXACTLY, in the field below. The timer starts when you start typing, and only stops when you match this text exactly. Good Luck!</h4>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-    scr
+    <div class="container ">
+        <div class="quotediv container">
+            <blockquote class="quote">I'm selfish, impatient and a little insecure. I make mistakes, I am out of control and at times hard to handle. But if you can't handle me at my worst, then you sure as hell don't deserve me at my best.</blockquote>
+
+
+        </div>
+
+
+        <div class="inputdiv">
+            <textarea name="input" class="input" id="input" cols="35" rows="7"></textarea>
+
+        </div>
+        <div class="footer row">
+            <div class="timer col-12 col-sm-6 text-center" id="timer"><span id="minut">00</span>:<span id="second">00</span>:<span id="milisecond">00</span>
+            </div>
+            <div class="button col-12 col-sm-6 mt-3 mr-auto text-right">
+                <button type="submit" class="" onclick="reset()">Start Over</button>
+            </div>
+
+        </div </div>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
 </body>
 
 </html>

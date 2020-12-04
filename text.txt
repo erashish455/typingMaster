@@ -84,9 +84,12 @@
 
 
 function reset() {
-    sec = -1;
+    sec = 0;
     min = 0;
     hour = 0;
     if (document.clock.theButton.value == "Stop ") { document.clock.theButton.value = "Start"; }
     window.clearTimeout(SD);
 }
+
+
+<div class="timer" id="timer"><span id="minut"></span>:<span id="second"></span>:<span id="milisecond"></span> </div>
